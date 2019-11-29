@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://lengyel.com/Framework" elementFormDefault="qualified">
+  <xs:element name="page">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="GuiElement" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="name"/>
+              <xs:element name="kind" minOccurs="0">
+	  				<xs:simpleType>
+				    <xs:restriction base="xs:string">
+				      <xs:enumeration value="button"/>
+				      <xs:enumeration value="combobox"/>
+				      <xs:enumeration value="checkbox"/>
+				      <xs:enumeration value="dropdown"/>
+				      <xs:enumeration value="label"/>
+				      <xs:enumeration value="list"/>
+				      <xs:enumeration value="panel"/>
+				      <xs:enumeration value="popup"/>
+				      <xs:enumeration value="select"/>
+				      <xs:enumeration value="table"/>
+				      <xs:enumeration value="textfield"/>
+				      <xs:enumeration value="radiobutton"/>
+				      <xs:enumeration value="selectWithText"/>
+				      <xs:enumeration value="selectWithoutText"/>
+				    </xs:restriction>
+				  </xs:simpleType>
+			  </xs:element>
+              <xs:element type="xs:string" name="identifier"/>
+              <xs:element type="xs:string" name="identValue"/>
+              <xs:element type="xs:string" name="ajax" minOccurs="0"/>
+              <xs:element type="xs:string" name="http" minOccurs="0"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -17,7 +17,7 @@ import org.testng.internal.TestResult;
 import java.io.File;
 import java.lang.reflect.Field;
 
-public class ScreenshotOnFailureListener extends FrameworkWebTestCase implements IInvokedMethodListener {
+public class FrameworkScreenshotOnFailureListener extends FrameworkWebTestCase implements IInvokedMethodListener {
 
 	@Override
 	public void beforeInvocation(IInvokedMethod method, ITestResult testResult) {

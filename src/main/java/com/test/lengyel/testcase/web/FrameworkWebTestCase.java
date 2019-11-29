@@ -4,7 +4,7 @@ import com.test.lengyel.constants.FrameworkConstants;
 import com.test.lengyel.gui.web.FrameworkDriverFactory;
 import com.test.lengyel.testcase.FrameworkTestCase;
 import com.test.lengyel.testcase.TestContextFactory;
-import com.test.lengyel.testcase.listener.ScreenshotOnFailureListener;
+import com.test.lengyel.testcase.listener.FrameworkScreenshotOnFailureListener;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -16,7 +16,7 @@ import org.testng.annotations.*;
 import java.util.HashMap;
 import java.util.Map;
 
-@Listeners(ScreenshotOnFailureListener.class)
+@Listeners(FrameworkScreenshotOnFailureListener.class)
 public class FrameworkWebTestCase extends FrameworkTestCase {
 
 	public boolean useDriverPool = true;

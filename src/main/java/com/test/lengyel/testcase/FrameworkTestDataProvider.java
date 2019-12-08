@@ -16,7 +16,6 @@ public class FrameworkTestDataProvider {
 	public static Object[][] provideData(Method m) {
 		String testCaseName = m.getDeclaringClass().getSimpleName();
 		String specificMarket = System.getProperty("market");
-		System.out.println("Cpecific Market="+specificMarket);
 
 		String customPath = FrameworkPropertiesManager.getFunctionalProperty(null,
 				FrameworkConstants.CUSTOM_TESTDATA_PATH_PROPERTY, true);
@@ -26,7 +25,6 @@ public class FrameworkTestDataProvider {
 		Object[][] returnValue;
 		
 		if (specificMarket!=null && specificMarket.equals("ALL")) {
-			System.out.println("Specific Market="+specificMarket+".Prepare test for all markets");
 			returnValue = filterFoundFiles(FrameworkResourceMapper
 					.getFileNamesWithWildCard(testCaseName + "_*", customPath));
 		} 
@@ -35,7 +33,6 @@ public class FrameworkTestDataProvider {
 			returnValue = filterFoundFiles(FrameworkResourceMapper
 					.getFileNamesWithWildCard(testCaseName + "_M-"+specificMarket+"*", customPath));
 		}else {
-			System.out.println("Specific Market is not set. Prepare test for all markets");
 			returnValue = filterFoundFiles(FrameworkResourceMapper
 					.getFileNamesWithWildCard(testCaseName + "_*", customPath));
 		}

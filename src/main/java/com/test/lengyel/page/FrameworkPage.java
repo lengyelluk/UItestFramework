@@ -242,7 +242,7 @@ public abstract class FrameworkPage {
     }
 
     /**
-     * added by Lukas: to translate a label in an element locator
+     * to translate a label in an element locator
      * labels in selectors are not marked specifically, just a standard #searchString
      * @param guiElement which has a label value in xpath
      * @param market as default language depends on the market
@@ -253,7 +253,7 @@ public abstract class FrameworkPage {
     }
 
     /**
-     * added by Lukas: to return a translation of a label in an element locator
+     * to return a translation of a label in an element locator
      * labels in selectors are not marked specifically, just a standard #searchString
      * this method is needed in case more than one #searchString should be replaced
      * @param guiElement which has a label value in xpath

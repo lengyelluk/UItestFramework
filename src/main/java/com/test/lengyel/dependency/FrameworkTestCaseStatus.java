@@ -60,7 +60,6 @@ public class FrameworkTestCaseStatus {
 					"UTF-8");
 			xstream.toXML(status, writer);
 		} catch (Exception e) {
-			logger.catching(e);
 		}
 	}
 
@@ -73,7 +72,7 @@ public class FrameworkTestCaseStatus {
 
 	public static void setStatusForTestCaseAndTestChain(String testChain, String testCase,
 			FrameworkTestCaseStatusEnum statusEnum, String addition) {
-		FrameworkTestCaseStatus status = getInstance(addition);
+		FrameworkTestCaseStatus status = getInstance();
 		if (status.getStatusPerTestChain().containsKey(testChain)) {
 			status.getStatusPerTestChain().get(testChain).put(testCase, statusEnum);
 		} else {

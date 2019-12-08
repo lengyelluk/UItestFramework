@@ -886,7 +886,7 @@ public class FrameworkWebGuiActions implements IFrameworkGuiActions {
 	}
 
 	/**
-	 * added by Gilles: use a drag able element(Scroll bar) to scroll until the
+	 * use a drag able element(Scroll bar) to scroll until the
 	 * element to find is in view.
 	 * 
 	 * 
@@ -944,7 +944,7 @@ public class FrameworkWebGuiActions implements IFrameworkGuiActions {
 	}
 
 	/**
-	 * added by Tatiana Nikolaeva clicks the scroll bar and drags it down or up
+	 * clicks the scroll bar and drags it down or up
 	 * by the number of pixels
 	 * 
 	 * @param draggableScrollbar
@@ -979,7 +979,7 @@ public class FrameworkWebGuiActions implements IFrameworkGuiActions {
 	}
 
 	/**
-	 * added by Tatiana Nikolaeva: waits for ajax request to complete
+	 * waits for ajax request to complete
 	 * 
 	 * @param maxTimeToWait
 	 *            : maximum time to wait
@@ -1010,7 +1010,7 @@ public class FrameworkWebGuiActions implements IFrameworkGuiActions {
 	}
 
 	/**
-	 * added by Tatiana Nikolaeva: hovers over Webelement without clicking it
+	 * hovers over Webelement without clicking it
 	 */
 	public void hoverOverElement(TestContext testContext,
 			GuiElement guiElement) {
@@ -1028,7 +1028,7 @@ public class FrameworkWebGuiActions implements IFrameworkGuiActions {
 	}
 	
 	/**
-	 * added by Tatiana Nikolaeva: sets size for the browser window
+	 * sets size for the browser window
 	 * @param testContext
 	 * @param width of browser window
 	 * @param height of browser window
@@ -1038,7 +1038,7 @@ public class FrameworkWebGuiActions implements IFrameworkGuiActions {
 	}
 	
 	/**
-	 * added by Tatiana Nikolaeva: accepts the currently displayed alert pop up
+	 * accepts the currently displayed alert pop up
 	 * @param testContext
 	 */
 	public void acceptAlert(TestContext testContext) {
@@ -1053,7 +1053,7 @@ public class FrameworkWebGuiActions implements IFrameworkGuiActions {
 	}
 	
 	/**
-	 * added by Lukas: wait for element to be clickable for a specified timeout
+	 * wait for element to be clickable for a specified timeout
 	 * @param guiElement element that we are waiting for
 	 */
 	
@@ -1067,7 +1067,7 @@ public class FrameworkWebGuiActions implements IFrameworkGuiActions {
 	
 
 	/**
-	 * added by Gilles: try through resizing a window, to make the Scroll bar in DLG
+	 * try through resizing a window, to make the Scroll bar in DLG
 	 * Dialog visible.
 	 * 
 	 * @param TestContext
@@ -1080,7 +1080,7 @@ public class FrameworkWebGuiActions implements IFrameworkGuiActions {
 	}
 
 	/**
-	 * added by Gilles: Determine with the Java script and the coordinate of an
+	 * Determine with the Java script and the coordinate of an
 	 * element, it the element is visible in Viewport,meaning the element is
 	 * actually been seen in view.
 	 *
@@ -1098,7 +1098,7 @@ public class FrameworkWebGuiActions implements IFrameworkGuiActions {
 	}
 	
 	/**
-	 * added by Lukas: different than scrollTo in such a way that it does not
+	 * different than scrollTo in such a way that it does not
 	 * scroll until the element is on the top of the page but it scrolls to
 	 * get the element to the bottom of the page
 	 * @param guiElement
@@ -1122,7 +1122,6 @@ public class FrameworkWebGuiActions implements IFrameworkGuiActions {
 	}
 	
 	/**
-	 * Added By Zuhair
 	 * This Method Waits until the provide Frame is available and then switch to it
 	 * @param testContext
 	 * @param frameName

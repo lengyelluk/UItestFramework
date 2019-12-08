@@ -9,6 +9,7 @@ import org.apache.logging.log4j.core.LoggerContext;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 
 import java.io.File;
@@ -39,7 +40,6 @@ public abstract class FrameworkTestCase {
 		logContext.reconfigure();
 	}
 
-	@AfterSuite
 	public void checkVerificationErrors() {
 		FrameworkAssertActions.checkForVerificationErrors();
 	}

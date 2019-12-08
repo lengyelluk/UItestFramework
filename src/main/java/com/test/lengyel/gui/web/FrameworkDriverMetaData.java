@@ -24,6 +24,7 @@ public class FrameworkDriverMetaData {
 
 	private FirefoxOptions firefoxOptions;
 	private ChromeOptions chromeOptions;
+	private ChromeOptions appliChromeOptions;
 
 	private boolean gridFlag;
 
@@ -112,6 +113,13 @@ public class FrameworkDriverMetaData {
 		//return null if browser not firefox
 		if(!browserName.equalsIgnoreCase("chrome"))
 			return null;
+
+		String aiMode = technicalSettings.getProperty(FrameworkConstants.AI_MODE_PROPERTY);
+		boolean ai = false;
+		if(aiMode != null && aiMode.equals("true")) {
+			System.out.println("I am APPLITOOLS MASTER");
+			ai = true;
+		}
 		
 		String debugMode = technicalSettings.getProperty(FrameworkConstants.DEBUG_MODE_PROPERTY);
 		boolean debug = false;
@@ -138,8 +146,9 @@ public class FrameworkDriverMetaData {
 			logger.info("CHROME PATH from System properties " + chromePath);
 		}
 
-		return buildChromeCapabilities(browserName, debug, true, chromeDriverPath, chromePath);
+		return buildChromeCapabilities(browserName, debug, true, chromeDriverPath, chromePath, ai);
 	}
+
 
 	private FirefoxOptions buildFirefoxCapabilities(String browserName, boolean debugMode, boolean automatedUsage,
             String geckodriverPath, String firefoxPath) {
@@ -218,7 +227,7 @@ public class FrameworkDriverMetaData {
 	
 	
 	private ChromeOptions buildChromeCapabilities(String browserName, boolean debugMode, boolean automatedUsage,
-            String chromeDriverPath, String chromePath) {
+            String chromeDriverPath, String chromePath, boolean aiMode) {
 			logger.debug("Building new Chrome DesiredCapabilities");
         
 			//create chrome options as advised in Selenium HQ

@@ -69,6 +69,8 @@ public class FrameworkDriverFactory {
 			if (metaData.getChromeOptions().getBrowserName().replaceAll(" ", "")
 					.equalsIgnoreCase(FrameworkConstants.CHROME_PROPERTY)) {
 				logger.info("Starting new Chrome webdriver");
+
+				//appli tools hack????
 				return new ChromeDriver(metaData.getChromeOptions());
 			}
 		}

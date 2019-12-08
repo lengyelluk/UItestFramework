@@ -13,7 +13,7 @@ public class FrameworkDependencyManager {
 
 	public static boolean checkTestCaseAndTestChainDependencies(String testChain, String testCase, String addition) {
 		List<String> dependencies = FrameworkDependencyMap.getInstance().getDependenciesForTestCase(testCase);
-		Map<String, FrameworkTestCaseStatusEnum> statusPerTestChain =  FrameworkTestCaseStatus.getInstance(addition).getStatusPerTestChain().get(testChain);
+		Map<String, FrameworkTestCaseStatusEnum> statusPerTestChain =  FrameworkTestCaseStatus.getInstance().getStatusPerTestChain().get(testChain);
 		if(statusPerTestChain != null){
 			for (String dependency : dependencies){
 				FrameworkTestCaseStatusEnum status = statusPerTestChain.get(dependency);

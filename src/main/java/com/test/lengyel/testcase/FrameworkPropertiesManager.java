@@ -73,7 +73,7 @@ public class FrameworkPropertiesManager {
 		} catch (Exception e) {
 			logger.fatal("No technical Settings found");
 		}
-		return properties;
+ 		return properties;
 	}
 
 	public static Properties loadFunctionalProperties() {

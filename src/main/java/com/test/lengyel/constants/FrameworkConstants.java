@@ -6,6 +6,7 @@ public class FrameworkConstants {
     public static final String PROPERTIES_PATH = "Properties";
     public static final String TECHNICAL_PROPERTIES_NAME = "technical.properties";
     public static final String FUNCTIONAL_PROPERTIES_NAME = "functional.properties";
+    public static final String AI_MODE_PROPERTY = "aiMode";
     public static final int DRIVERPOOL_SIZE = 3;
     public static final String GRIDFLAG_PROPERTY = "gridFlag";
     public static final String GRIDURL_PROPERTY = "gridURL";

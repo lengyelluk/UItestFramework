@@ -1,5 +1,6 @@
 package com.test.lengyel.actions;
 
+import com.test.lengyel.dependency.FrameworkTestCaseStatus;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
@@ -72,10 +73,10 @@ public class FrameworkAssertActions {
 	}
 
 	public void verifyEquals(String currentValue, String expectedValue, String message) {
-		logger.info("Verify for Equality: Current: " + currentValue + " against expected: " + expectedValue);
+		logger.error("Verify for Equality: Current: " + currentValue + " against expected: " + expectedValue);
 		try {
 			verifications.assertEquals(currentValue, expectedValue, message + "\n");
-			checkPoints.add("[OK] " + message);
+			//checkPoints.add("[OK] " + message);
 		} catch (Error e) {
 			System.err.println("Failed");
 			verificationErrors.add(e);
@@ -89,8 +90,10 @@ public class FrameworkAssertActions {
 		if (verifications != null) {
 			try {
 				verifications.assertAll();
+				logger.info(checkPoints);
 			} catch (Error e) {
-				throw e;
+				logger.error(checkPoints);
+			//	throw e;
 			} finally {
 				verifications = new SoftAssert();
 			}
@@ -101,7 +104,7 @@ public class FrameworkAssertActions {
 		try {
 			checkForVerificationErrors();
 		} catch (Error e) {
-			return e.getMessage().replace("[ERROR] The following asserts failed:\n", "");
+			return e.getMessage().replace("[ERROR] The following asserts failed: ", "");
 		}
 		return "";
 	}
@@ -142,13 +145,14 @@ public class FrameworkAssertActions {
 	}
 
 	public void verifyTrue(boolean checkCondition, String message) {
-		logger.info("Verify for True: Current:" + checkCondition);
+		logger.info("Verify for True: " + message + ". Current:" + checkCondition);
 		try {
 			if (checkCondition) {
-				checkPoints.add("[OK] " + message);
+				//checkPoints.add("[OK] " + message);
 			} else {
 				checkPoints.add("[NOK] " + message);
 				logger.info("[NOK] " + message);
+				logger.error("Verify for True: " + message + ". Current:" + checkCondition);
 			}
 			verifications.assertTrue(checkCondition, message + "\n");
 		} catch (Error e) {
@@ -159,7 +163,7 @@ public class FrameworkAssertActions {
 	}
 
 	public void verifyEquals(BigDecimal currentValue, BigDecimal expectedValue, String message) {
-		logger.info("Verify for Equality: Current:" + currentValue + " against expected: " + expectedValue);
+		logger.error("Verify for Equality: Current:" + currentValue + " against expected: " + expectedValue);
 		try {
 			verifications.assertEquals(currentValue, expectedValue, message + "\n");
 			checkPoints.add("[OK] " + message);

@@ -17,6 +17,11 @@ public class FrameworkWebPage extends FrameworkPage {
 		setGuiActions(new FrameworkWebGuiActions());
 	}
 
+	//appli tool hack
+	public void initializeApplitoolsEyes() {
+		((FrameworkWebTestContext) testContext).getDriver();
+	}
+
 	public void loadUrl(String url) {
 		((FrameworkWebTestContext) testContext).getDriver().get(url);
 		((FrameworkWebTestContext) testContext).getDriver().manage().window().maximize();
@@ -133,14 +138,14 @@ public class FrameworkWebPage extends FrameworkPage {
 	}
 
 	/**
-	 * added by Tatiana Nikolaeva: hovers over Webelement without clicking it
+	 * hovers over Webelement without clicking it
 	 */
 	public void hoverOverElement(GuiElement guiElement) {
 		guiActions().hoverOverElement(testContext, guiElement);
 	}
 
 	/**
-	 * added by Tatiana Nikolaeva: selects value with the specified index in the
+	 * selects value with the specified index in the
 	 * dropdown
 	 */
 	public void selectByIndex(GuiElement dropdown, int index) {
@@ -148,7 +153,7 @@ public class FrameworkWebPage extends FrameworkPage {
 	}
 
 	/**
-	 * added by Tatiana Nikolaeva: selects value with the specified value in the
+	 * selects value with the specified value in the
 	 * dropdown (<option> Element)
 	 */
 	public void select(GuiElement dropdown, String value) {
@@ -156,7 +161,7 @@ public class FrameworkWebPage extends FrameworkPage {
 	}
 
 	/**
-	 * added by Tatiana Nikolaeva: sets size for the browser window
+	 * sets size for the browser window
 	 * 
 	 * @param testContext
 	 * @param width       of browser window
@@ -167,7 +172,7 @@ public class FrameworkWebPage extends FrameworkPage {
 	}
 
 	/**
-	 * added by Tatiana Nikolaeva: accepts the currently displayed alert pop up
+	 * accepts the currently displayed alert pop up
 	 * 
 	 * @param testContext
 	 */
@@ -181,7 +186,7 @@ public class FrameworkWebPage extends FrameworkPage {
 	}
 	
 	/**
-	 * added by Lukas: different than scrollTo in such a way that it does not
+	 * different than scrollTo in such a way that it does not
 	 * scroll until the element is on the top of the page but it scrolls to
 	 * get the element to the bottom of the page
 	 * @param guiElement

@@ -24,7 +24,7 @@ public class FrameworkTranslationHelper {
 	private static final String TRANSLATIONS_FOLDER = "Translations";
 
 	/**
-	 * added by Lukas: returns text of label in the specified language.
+	 * returns text of label in the specified language.
 	 * The value is retrieved from Labels.xml 
 	 */
 	public static String getLabelTranslation(String label, String market) {
@@ -46,7 +46,7 @@ public class FrameworkTranslationHelper {
 	}
 	
 
-	// added by Tatiana Nikolaeva: searches for XML tag for the specified market
+	// searches for XML tag for the specified market
 	private static Node findMessage(Document doc, String message) {
 		System.out.println("Searching for message " + message + " in translations xml");
 		Node marketNode = doc.getElementsByTagName(message).item(0);
@@ -57,7 +57,7 @@ public class FrameworkTranslationHelper {
 		return marketNode;
 	}
 	
-	// added by Tatiana Nikolaeva: searches for XML tag for the specified market
+	// searches for XML tag for the specified market
 		private static Node findLabel(Document doc, String label) {
 			System.out.println("Searching for label " + label + " in translations xml");
 			Node marketNode = doc.getElementsByTagName(label).item(0);
@@ -69,7 +69,7 @@ public class FrameworkTranslationHelper {
 		}
 
 
-	// added by Tatiana Nikolaeva: creates Document from XML file
+	// creates Document from XML file
 	private static Document getConfigurationXmlDocument(String xmlFileName) {
 		// xml file with translations for each Activity
 		File xmlFile = getConfigurationFile(xmlFileName);
@@ -100,7 +100,7 @@ public class FrameworkTranslationHelper {
 		return doc;
 	}
 
-	// added by Tatiana Nikolaeva: returns XML file with the specified name
+	// returns XML file with the specified name
 	private static File getConfigurationFile(String fileName) {
 		File file = new File(FrameworkTranslationHelper.class.getClassLoader()
 				.getResource(TRANSLATIONS_FOLDER + "/" + fileName).getFile());
@@ -109,7 +109,7 @@ public class FrameworkTranslationHelper {
 	}
 	
 	/**
-	 * added by Lukas: to return default language of a specific market
+	 * to return default language of a specific market
 	 * @param market
 	 * @return default language of the market
 	 */
